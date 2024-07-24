@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast from "react-hot-toast";
 import { Helmet } from 'react-helmet';
 
-const AddIdea = ({ handleNewData, setTaskOpen }) => {
+const AddIdea = ({ handleNewData, setIdeaTabOpen }) => {
     const maxLengths = 100;
 
     const [formData, setFormData] = useState();
@@ -25,7 +25,8 @@ const AddIdea = ({ handleNewData, setTaskOpen }) => {
             return
         }
         handleNewData(formData);
-        setTaskOpen(false)
+        console.log(formData)
+        setIdeaTabOpen(false)
     };
 
     return (
@@ -46,10 +47,10 @@ const AddIdea = ({ handleNewData, setTaskOpen }) => {
                     <div className='sm:w-4/5 w-1/5 p-2 flex items-center justify-center'>
                         <button className='bg-primary_button text-white px-4 py-1 rounded-md font-bold' onClick={handleSubmit}>Submit</button>
                     </div>
-                    <Helmet><title>Task Application | New Task</title></Helmet>
+                    <Helmet><title>Drag Drop & Arrange | New Idea</title></Helmet>
                 </div>
             </div>
-            <div className='w-full h-full fixed backdrop-blur-[1px]' onClick={()=>setTaskOpen(false)}></div>
+            <div className='w-full h-full fixed backdrop-blur-[1px]' onClick={()=>setIdeaTabOpen(false)}></div>
         </section>
 
     );

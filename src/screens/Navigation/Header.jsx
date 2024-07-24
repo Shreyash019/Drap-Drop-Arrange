@@ -3,7 +3,7 @@ import { PiNotepadFill } from "react-icons/pi";
 import AddIdea from '../DDA/AddIdea';
 
 const Header = ({handleNewData}) => {
-  const [taskOpen, setTaskOpen] = useState(false)
+  const [ideaTabOpen, setIdeaTabOpen] = useState(false)
   return (
     <>
       <nav className='w-full h-auto p-2 float-left overflow-auto bg-black flex items-center justify-center'>
@@ -11,12 +11,12 @@ const Header = ({handleNewData}) => {
             <span className='font-bold text-white text-xl lg:text-2xl flex items-center justify-start'><PiNotepadFill/>&nbsp;DDA</span>
         </div>
         <div className='w-3/5 md:w-2/5 lg:w-1/5 h-auto flex items-center justify-end px-4'>
-          <button className='text-sm lg:text-lg font-bold text-white border p-2 rounded-lg hover:bg-white hover:text-black border-white active:bg-gray' onClick={() => setTaskOpen(!taskOpen)}>{taskOpen ? "Cancel" : "New Idea"}</button>
+          <button className='text-sm lg:text-lg font-bold text-white border p-2 rounded-lg hover:bg-white hover:text-black border-white active:bg-gray' onClick={() => setIdeaTabOpen(!ideaTabOpen)}>{ideaTabOpen ? "Cancel" : "New Idea"}</button>
         </div>
       </nav>
-      {taskOpen && (
+      {ideaTabOpen && (
         <div className='float-left overflow-auto relative w-full'>
-          <AddIdea handleNewData={handleNewData} setTaskOpen={setTaskOpen}/>
+          <AddIdea handleNewData={handleNewData} setIdeaTabOpen={setIdeaTabOpen}/>
         </div>
       )}
     </>

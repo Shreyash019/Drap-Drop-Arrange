@@ -19,11 +19,11 @@ const DragDropArrange = ({projectData}) =>  {
     const { toList, index } = over.data.current;
 
     if (fromList === toList) {
-      const sortedItems = arrayMove(dataArray[toList], dataArray[toList].findIndex((task) => task._id === targetId), index);
+      const sortedItems = arrayMove(dataArray[toList], dataArray[toList].findIndex((idea) => idea._id === targetId), index);
       setDataArray((prev) => ({ ...prev, [toList]: sortedItems }));
     } else {
-      const draggedItem = dataArray[fromList].find((task) => task._id === targetId);
-      const updatedFromList = dataArray[fromList].filter((task) => task._id !== targetId);
+      const draggedItem = dataArray[fromList].find((idea) => idea._id === targetId);
+      const updatedFromList = dataArray[fromList].filter((idea) => idea._id !== targetId);
       const updatedToList = [...dataArray[toList].slice(0, index), draggedItem, ...dataArray[toList].slice(index)];
 
       setDataArray((prev) => ({ ...prev, [fromList]: updatedFromList, [toList]: updatedToList }));
@@ -62,7 +62,7 @@ const DragDropArrange = ({projectData}) =>  {
           )}
         </div>
       </div>
-      <Helmet><title>Task Application | Home</title></Helmet>
+      <Helmet><title>Drag Drop & Arrange | Home</title></Helmet>
     </section>
   );
 };
