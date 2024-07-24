@@ -1,46 +1,35 @@
-import Example from "./screens/Example"
-
+import React, { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
+import Header from './screens/Navigation/Header';
+import DragDropArrange from './screens/DDA/DragDropArrange';
+import projectDataJson from "./Data/data.json"
 
 function App() {
-  const grocery = [{ id: 11, item: "Coffee" }, { id: 12, item: "Tea" }, { id: 13, item: "Sugar" }, { id: 14, item: "Milk" }]
-  const bought = [{ id: 10, item: "Bottle" }]
 
-  function updateFunction(drag, dragged) {
-    if (drag.fromList == dragged.toList) {
-      if (drag.fromList === 'bought') {
-        const popValIndex = bought.findIndex(data => data.id === drag.targetId);
-        const filterValue = bought[popValIndex]
-        bought.splice(popValIndex, 1);
-        bought.splice(dragged.index, 0, filterValue)
-      } else if (drag.fromList === 'grocery') {
-        const popValIndex = grocery.findIndex(data => data.id === drag.targetId);
-        const filterValue = grocery[popValIndex]
-        grocery.splice(popValIndex, 1);
-        grocery.splice(dragged.index, 0, filterValue)
-      }
-    }
-    else if (drag.fromList === 'grocery' && dragged.toList === 'bought') {
-      const popValIndex = grocery.findIndex(data => data.id === drag.targetId);
-      const filterValue = grocery[popValIndex]
-      grocery.splice(popValIndex, 1);
-      bought.splice(dragged.index, 0, filterValue)
-    }
-    else if (drag.fromList === 'bought' && dragged.toList === 'grocery') {
-      const popValIndex = bought.findIndex(data => data.id === drag.targetId);
-      const filterValue = bought[popValIndex]
-      bought.splice(popValIndex, 1);
-      grocery.splice(dragged.index, 0, filterValue)
-    }
+  const [projectData, setProjectData] = useState(projectDataJson)
+  function handleNewData(data){
+    const tempData = projectData.newIdea;
+    const maxNumber = (Math.random() * 100) * 1000;
+    tempData.push({_id: maxNumber, idea: data});
+    setProjectData({...data, newIdea: tempData})
   }
 
   return (
-    <div className="min-h-screen h-auto overflow-auto p-2">
-      <div className="w-full h-auto p-2 flex items-center justify-center my-4">
-        <h1 className="text-3xl text-navy font-extrabold">Drag, Drop and Arrange</h1>
+    <div className="h-auto overflow-auto">
+      <div className='w-full h-auto overflow-auto fixed z-50'>
+      <Header handleNewData={handleNewData}/>
       </div>
-      <Example grocery={grocery} bought={bought} updateFunction={updateFunction} />
+      <div className="h-auto overflow-auto my-16 flex items-center justify-center">
+        <DragDropArrange projectData={projectData}/>
+      </div>
+      <Toaster
+        toastOptions={{
+          className: 'text-xs',
+          duration: 3000,
+        }}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

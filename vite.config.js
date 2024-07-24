@@ -6,4 +6,9 @@ import autoprefixer from 'autoprefixer';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss, autoprefixer],
+  build: {
+    outDir: 'dist',
+  },
 })
+
+
