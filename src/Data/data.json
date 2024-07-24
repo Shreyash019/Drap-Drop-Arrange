@@ -1,9 +1,30 @@
 {
-    "newIdea": [
-        {"_id": 1, "idea": "Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea!"},
-        {"_id": 2, "idea": "Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea!"}
-      ],
-      "oldIdea": [
-        {"_id": 3, "idea": "Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea! Hello from the new Idea!"}
-      ]
+  "newIdea": [
+    {
+      "_id": 1,
+      "idea": "New: AI-powered fitness coach for personalized workout plans."
+    },
+    {
+      "_id": 2,
+      "idea": "New: VR travel app offering immersive virtual world tours."
+    },
+    {
+      "_id": 3,
+      "idea": "New: Smart home energy optimizer to reduce power consumption."
+    },
+    {
+      "_id": 4,
+      "idea": "New: Personalized meal planner with dietary recommendations."
+    }
+  ],
+  "oldIdea": [
+    {
+      "_id": 5,
+      "idea": "Old: Social media platform connecting friends and communities."
+    },
+    {
+      "_id": 6,
+      "idea": "Old: Online shopping site with a wide range of products."
+    }
+  ]
 }

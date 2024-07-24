@@ -25,11 +25,8 @@ const Drag = ({ data, listType }) => {
                 {...attributes}
             >
                 <div>
-                    <div className="w-auto p-2 h-20 bg-yellow">
-                        <div className="w-auto flex items-start -translate-y-2 translate-x-2 justify-end">
-                            <span className='w-fit h-fit rounded-full p-0.5 overflow-hidden text-[0.6rem] bg-navy text-red'><IoMdMove /></span>
-                        </div>
-                        <p className="h-auto text-xs lg:text-sm text-black line-clamp-2 break-all overflow-hidden">{data?.idea}</p>
+                    <div className="w-auto p-2 h-auto bg-yellow">
+                        <p className="h-auto text-xs lg:text-sm text-black break-all">{data?.idea}</p>
                     </div>
                 </div>
             </section>

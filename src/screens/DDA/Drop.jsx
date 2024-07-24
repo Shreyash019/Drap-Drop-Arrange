@@ -20,7 +20,6 @@ const Drop= ({ index, setDragged, listType }) => {
             className={`w-auto h-16 rounded-lg flex items-center justify-center text-xs text-secondary_shadow ${isOver ? ` opacity-100` : `opacity-0`}`}
             style={{ pointerEvents: 'none' }}
         >
-            Drop here
         </section>
     );
 };

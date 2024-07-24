@@ -34,7 +34,7 @@ const DragDropArrange = ({projectData}) =>  {
     const { newIdea, oldIdea } = projectData;
     setTimeout(() => {
       setDataArray((prev) => ({ ...prev, newIdea, oldIdea }));
-    }, 1000);
+    }, 500);
   };
 
   useEffect(() => {

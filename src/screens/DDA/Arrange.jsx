@@ -28,7 +28,7 @@ const Arrange = ({ dataArray }) => {
               <>
                 {newIdea?.map((data) => (
                   <React.Fragment key={data._id}>
-                    <Drag data={data} listType="newIdea" />
+                    <Drag data={data} listType="newIdea"/>
                   </React.Fragment>
                 ))}
                 <Drop index={newIdea.length} listType="newIdea" />
