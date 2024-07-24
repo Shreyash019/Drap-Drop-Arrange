@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  /* font-family:Georgia, 'Times New Roman', Times, serif; */
+  font-family: serif;
+}
+
+/* Default height for vertical display */
+.element {
+  height: 50vh;
+  /* 50% of the viewport height */
+}
+
+/* Adjust height for horizontal display (landscape mode) */
+@media screen and (orientation: landscape) {
+  .element {
+    height: 80vh;
+    /* 80% of the viewport height */
+  }
+}
